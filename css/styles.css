@@ -40,10 +40,18 @@ img {
   height: auto;
 }
 button {
+  display: block;
+  margin: 0 auto;
   cursor: pointer;
+  border: none;
+  border-radius: 4px;
 }
 address {
   font-style: normal;
+}
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 .container {
   width: 1200px;
@@ -52,9 +60,14 @@ address {
   margin: 0 auto;
   outline: 2px solid red;
 }
+/* Прибираємо крапки зі списків */
+/* Обнуляємо padding and margin списків */
 .list {
   list-style: none;
+  margin: 0;
+  padding-left: 0;
 }
+/* Прибираємо підкреслення у посилань */
 .link {
   text-decoration: none;
 }
@@ -75,6 +88,18 @@ address {
   padding-top: 24px;
   padding-bottom: 25px;
   border-bottom: 1px solid var(--accent-color);
+}
+.container .header {
+  display: flex;
+  align-items: center;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+.header-list {
+  display: flex;
+  margin-left: auto;
 }
 .logo {
   color: var(--accent-color);
@@ -248,36 +273,35 @@ address {
   line-height: 1.71;
   color: var(--background-color);
   font-style: normal;
+  display: block;
+  margin-bottom: 9px;
 }
 .footer-point:hover,
 .footer-point:focus {
   color: var(--accent-color);
 }
-
 .footer-link {
   line-height: 1.71;
   color: var(--background-color);
   font-style: normal;
-  display: block;
-  margin-top: 9px;
-  margin-bottom: 0;
 }
 .footer-link:hover,
 .footer-link:focus {
   color: var(--accent-color);
 }
+.footer-item:not(:last-child) {
+  margin-bottom: 9px;
+}
 
 /* Портфоліо */
 .portfolio-btn {
   font-family: var(--main-text-color);
-  color: (var(--main-text-color));
+  color: var(--main-text-color);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.63;
   background-color: var(--additional-background-color);
   letter-spacing: 0.03em;
-  border-radius: 4px;
-  border-color: transparent;
   padding: 6px 22px;
 }
 .portfolio-btn:hover,
