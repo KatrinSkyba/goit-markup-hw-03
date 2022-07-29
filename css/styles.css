@@ -8,7 +8,7 @@
   --additional-background-color: #f5f4fa;
   --additional-color: rgba(255, 255, 255, 0.6);
   --footer-and-hero-color: #2f303a;
-  --color: #ececec;
+  --header-border-color: #ececec;
   --main-font-family: 'Roboto', sans-serif;
   --main-font-size: 14px;
   --main-letter-spacing: 0.03em;
@@ -85,19 +85,21 @@ address {
 }
 /* header */
 .header {
-  padding-top: 24px;
-  padding-bottom: 25px;
-  border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--header-border-color);
 }
-.container .header {
+.header .container {
   display: flex;
   align-items: center;
 }
 .header-nav {
   display: flex;
+  margin-left: 0;
   align-items: center;
 }
 .header-list {
+  display: flex;
+}
+.header-contacts {
   display: flex;
   margin-left: auto;
 }
@@ -115,18 +117,34 @@ address {
   font-size: 26px;
   line-height: 1.19;
 }
-
 .header-link {
+  margin-right: 93px;
+}
+.header-list .link {
   color: var(--main-text-color);
+}
+.nav-link.current,
+.mail.current {
+  color: var(--accent-color);
+}
+.nav-link.link {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
-.header-link:hover,
-.header-link:focus {
+.header-item,
+.contacts-item {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.nav-link:hover,
+.nav-link:focus {
   color: var(--accent-color);
 }
-
+.header-item:not(:last-child),
+.contacts-item:not(:last-child) {
+  margin-right: 50px;
+}
 .mail,
 .tel {
   color: var(--secondary-text-color);
@@ -140,9 +158,6 @@ address {
 }
 .tel:hover,
 .tel:focus {
-  color: var(--accent-color);
-}
-.current {
   color: var(--accent-color);
 }
 
@@ -171,11 +186,12 @@ address {
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
-  line-height: 1.86;
+  line-height: 1.88;
   letter-spacing: 0.06em;
   color: var(--background-color);
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 10px 32px;
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -183,10 +199,7 @@ address {
   background-color: #188ce8;
 }
 /* section */
-.section {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
+
 .section-subtitle {
   font-size: var(--main-font-size);
   font-weight: 700;
@@ -197,13 +210,18 @@ address {
 .section-text {
   line-height: 1.71;
   color: var(--secondary-text-color);
+  width: 270px;
 }
+.section-list {
+  display: flex;
+}
+.section-item:not(:last-child) {
+  margin-right: 30px;
+}
+
 /* gallery */
 .no-padding {
   padding-top: 0;
-}
-.gallery {
-  padding-bottom: 94px;
 }
 .gallery-title {
   font-weight: 700;
@@ -211,6 +229,10 @@ address {
   line-height: 1.17;
   text-align: center;
   margin-bottom: 50px;
+}
+.gallery-list {
+  display: flex;
+  gap: 30px;
 }
 
 /* team */
@@ -224,24 +246,39 @@ address {
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
-}
-.team-description {
-  background-color: var(--background-color);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  padding: 30px 5px;
-}
-.team-member {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.17;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }
 .team-job {
   font-size: 16px;
   line-height: 1.17;
   color: var(--secondary-text-color);
+  text-align: center;
+}
+.team-item {
+  width: 270px;
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+  flex-basis: calc((100% - 30px * 3) / 4);
+}
+.team-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.team-member {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.17;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.team-list {
+  display: flex;
+}
+.team-description {
+  padding: 30px 0;
 }
 
 /* footer */
@@ -282,7 +319,7 @@ address {
 }
 .footer-link {
   line-height: 1.71;
-  color: var(--background-color);
+  color: var(--additional-color);
   font-style: normal;
 }
 .footer-link:hover,
@@ -332,7 +369,7 @@ address {
   line-height: 1.88;
   color: var(--secondary-text-color);
 }
-.current {
+/* .current {
   background-color: var(--accent-color);
   color: var(--background-color);
-}
+} */
